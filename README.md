@@ -1,0 +1,1 @@
+Migrate into your gitea instance for a dependabot like experience.

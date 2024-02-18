@@ -4,6 +4,9 @@ run-name: ${{ gitea.actor }} is renovating
 on:
   schedule:
     - cron: "0 0 * * 1,4"
+  push:
+    branches:
+      - main
 
 jobs:
   renovate:

@@ -1,0 +1,29 @@
+name: Renovate
+run-name: ${{ gitea.actor }} is renovating
+
+on:
+  schedule:
+    - cron: "0 0 * * 1,4"
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Install Docker
+        run: curl -fsSL https://get.docker.com | sh
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v40.0.3
+        env:
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          LOG_LEVEL: debug
+          RENOVATE_ENDPOINT: ${{ secrets.RENOVATE_ENDPOINT }}
+          RENOVATE_PLATFORM: gitea
+          RENOVATE_AUTODISCOVER: 'true'
+          RENOVATE_PR_HOURLY_LIMIT: 10
+        with:
+          onboarding: false
+          requireConfig: false
+          token: ${{ secrets.RENOVATE_TOKEN }}
+          docker-cmd-file: renovate-entrypoint.sh

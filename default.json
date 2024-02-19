@@ -1,4 +1,6 @@
 {
+  "description": "Bundles major and minor patches into one PR and includes the recommended config from renovate.",
+  "extends": ["config:recommended"],
   "packageRules": [
     {
       "groupName": "all non-major dependencies",

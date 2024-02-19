@@ -25,7 +25,6 @@ jobs:
           RENOVATE_PLATFORM: gitea
           RENOVATE_AUTODISCOVER: 'true'
           RENOVATE_PR_HOURLY_LIMIT: 10
-          RENOVATE_CONFIG_FILE: /workspace/${{ gitea.actor }}/renovator/renovate.json
         with:
           onboarding: false
           requireConfig: false

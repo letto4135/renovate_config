@@ -27,6 +27,6 @@ jobs:
           RENOVATE_PR_HOURLY_LIMIT: 10
         with:
           onboarding: false
-          requireConfig: false
+          requireConfig: ignored
           token: ${{ secrets.RENOVATE_TOKEN }}
           docker-cmd-file: renovate-entrypoint.sh

@@ -25,8 +25,8 @@ jobs:
           RENOVATE_PLATFORM: gitea
           RENOVATE_AUTODISCOVER: 'true'
           RENOVATE_PR_HOURLY_LIMIT: 10
+          RENOVATE_REQUIRE_CONFIG: ignored
         with:
           onboarding: false
-          requireConfig: ignored
           token: ${{ secrets.RENOVATE_TOKEN }}
           docker-cmd-file: renovate-entrypoint.sh
